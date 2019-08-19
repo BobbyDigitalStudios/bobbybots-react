@@ -8,7 +8,7 @@ Front end assignment: Display a score board of some super duper mega special rob
 
 The app should use [React](https://reactjs.org/) as a framework. You can use [Create React App](https://github.com/facebook/create-react-app) as a boilerplate.
 
-Fork this repository, it contains the local assets needed. When you're done, send us a link to your fork.
+Clone or fork this repository, it contains the local assets needed. When you're done, send us a link to your work.
 
 #### Design
 * The designs are provided to you on a separate URL
