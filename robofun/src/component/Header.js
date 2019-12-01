@@ -18,27 +18,20 @@ export class Header extends Component {
 
 const headerStyle = {
   display: 'flex',
+  justifyContent: 'space-between',
   position: 'sticky',
-  top: '0',
-  flex: '1',
-  padding: '1% 0',
+  padding: '1.5% 0',
   width: '100%',
-  backgroundColor: '#f2f2f2',
-  marginBottom: '5rem',
-
+  background: '#fff',
+  
   img: {
-    display: 'inline-block',
-    verticalAlign: 'top',
     height: '40px',
     marginRight: '3rem',
   },
-
+  
   h1: {
-    display: 'inline-block',
-    verticalAlign: 'top',
-    color: '#ba547e',
-    marginLeft: '3rem',
-    flex: '1'
+    color: '#72002f',
+    marginLeft: '3rem'
   }
 
 }

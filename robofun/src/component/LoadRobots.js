@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import Search from './Search'
-// import axios from 'axios'
+import axios from 'axios'
+import PropTypes from 'prop-types';
+
 
 export class LoadRobots extends Component {
 
@@ -166,8 +167,7 @@ export class LoadRobots extends Component {
       }
     ],
     robotIMG: 'https://bobby-testing.s3.eu-north-1.amazonaws.com/bobbybots/img/',
-    counter: 1,
-    search: ''
+    text: ''
   }
 
   // componentDidMount() {
@@ -179,25 +179,39 @@ export class LoadRobots extends Component {
     if (this.state.robotFacts.length === 0) {
       return <p>Computer says: NO (robots...)</p>
     } else {
+      let search = this.props.onSearch
+      search = this.state.robotFacts.filter(
+        (robot) => {
+          return robot.name.indexOf(this.state.text) !== -1
+        }
+      );
       return <ul>
-        <Search />
+        <div className="headings">
+          <p>Name</p>
+          <p>Score</p>
+        </div>
         {
-          this.state.robotFacts.map(robot =>
+          search.map(robot =>
             <div className="card" key={robot.id}>
-              <img style={robotStyles.img} src={this.state.robotIMG + robot.image} alt="robot" />
-              <div className="info-text">
-                <h5>{robot.name}</h5>
-                <p style={robotStyles.p}>{robot.categories} </p>
+              <img style={image} src={this.state.robotIMG + robot.image} alt="robot" />
+              <div>
+                <p style={{ fontSize: '1rem' }}>{robot.name}</p>
+                <p style={{ fontSize: '.8rem' }}>{robot.categories}</p>
               </div>
-              <h6 style={robotStyles.h6}>{robot.score} </h6>
+              <p style={{ fontSize: '1rem', alignItem: 'right' }}>{robot.score} </p>
             </div>)
         }
       </ul>
     }
   }
+
+  // searchRobot = (text) => {
+  //   // this.renderRobots({ text });
+  //   this.state.robotFacts.map((robot) => {
+  //     return robot.name.toLowerCase().includes(text.toLowerCase())
+  //   });
+  // }
   render() {
-
-
     return (
       <div>
         {this.renderRobots()}
@@ -206,26 +220,16 @@ export class LoadRobots extends Component {
   }
 }
 
-const robotStyles = {
+const image = {
+  margin: '1rem',
+  border: '1px solid #82a5ab',
+  borderRadius: '50%',
+  background: '#fff',
+  height: '50px'
+}
 
-  img: {
-    alignSelf: 'center',
-    margin: '1rem',
-    border: '1px solid #82a5ab',
-    borderRadius: '50%',
-    background: '#fff',
-    height: '50px'
-  },
-  h5: {
-    fontSize: '1rem'
-  },
-  h6: {
-    justifyContent: 'flex-end',
-    fontSize: '1rem',
-  },
-  p: {
-    fontSize: '.8rem'
-  }
+LoadRobots.propTypes = {
+  onSearch: PropTypes.func.isRequired
 }
 
 export default LoadRobots
