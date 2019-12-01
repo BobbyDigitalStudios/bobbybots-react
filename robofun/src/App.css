@@ -21,13 +21,28 @@
   background: #c5e3e8;  
 }
 
-
 .info-text {
   line-height: 0;
   font-size: 1.2rem;
 }
 
-input {
-  background: url(img/search.svg) no-repeat center scroll 7px 7px;
-  padding-left: 3rem;
+input[type="text"] {
+  display: flex;
+  border-radius: .3rem;
+  border: 1px solid #ba547e;
+  color: #999;
+  background: url(img/search.svg) no-repeat 10px 10px;
+  padding: 1rem 8rem 0 1rem;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 1.2rem;
+  color: #999;
+  transform:translate3d(2rem,-8px,10px)
+}
+
+input::-webkit-input[type="text"] {
+  font-size: 1.2rem;
+  color: #999;
+  transform:translate3d(2rem,-8px,10px)
 }

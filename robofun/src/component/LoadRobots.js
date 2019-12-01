@@ -3,8 +3,9 @@ import Search from './Search'
 // import axios from 'axios'
 
 export class LoadRobots extends Component {
+
   state = {
-    robotFact: [],
+    // robotFact: [],
     robotFacts: [
       {
         "name": "Anne Droid",
@@ -165,7 +166,8 @@ export class LoadRobots extends Component {
       }
     ],
     robotIMG: 'https://bobby-testing.s3.eu-north-1.amazonaws.com/bobbybots/img/',
-    counter: 1
+    counter: 1,
+    search: ''
   }
 
   // componentDidMount() {
@@ -175,7 +177,7 @@ export class LoadRobots extends Component {
 
   renderRobots() {
     if (this.state.robotFacts.length === 0) {
-      return <p>Computers says: NO (robots...)</p>
+      return <p>Computer says: NO (robots...)</p>
     } else {
       return <ul>
         <Search />
@@ -193,8 +195,9 @@ export class LoadRobots extends Component {
       </ul>
     }
   }
-
   render() {
+
+
     return (
       <div>
         {this.renderRobots()}
@@ -224,4 +227,5 @@ const robotStyles = {
     fontSize: '.8rem'
   }
 }
+
 export default LoadRobots
