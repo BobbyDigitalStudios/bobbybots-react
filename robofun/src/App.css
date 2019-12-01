@@ -1,22 +1,33 @@
-.App {
-  text-align: center;
+.container {
+  max-width: 70%;
+  margin: auto;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
+.robot {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 2px solid #82a5ab;
+  border-radius: 10px;
+  background: #a0d0d9;
+  margin-bottom: 1rem;
+  color: rgb(100, 100, 100);
 }
 
-.App-link {
-  color: #09d3ac;
+.card:nth-child(2n) {
+  background: #c5e3e8;  
+}
+
+
+.info-text {
+  line-height: 0;
+  font-size: 1.2rem;
+}
+
+input {
+  background: url(img/search.svg) no-repeat center scroll 7px 7px;
+  padding-left: 3rem;
 }
